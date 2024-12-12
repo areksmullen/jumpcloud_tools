@@ -7,12 +7,11 @@ import sqlite3
 from datetime import datetime
 
 
-# jumpcloudKey = os.environ["JUMPCLOUD_API_KEY"]
 headers = {"x-api-key": os.environ["JUMPCLOUD_API_KEY"], "content": "application/json"}
 
 
 # creates new jumpcloud command
-def create_command():
+def create_command() -> str:
     url = "https://console.jumpcloud.com/api/commands"
     payload = {
         "command": "#!/bin/bash\nls /Applications",
@@ -25,7 +24,8 @@ def create_command():
     }
 
     response = requests.request("POST", url, json=payload, headers=headers)
-    print(response)
+    commandID = json.loads(response.text)["_id"]
+    return commandID
 
 
 # binds the specified device group to the command
@@ -34,6 +34,10 @@ def bind_group(commandID: str, deviceGroupId: str):
     payload = {"id": deviceGroupId, "op": "add", "type": "system_group"}
     response = requests.request("POST", url, json=payload, headers=headers)
     print(response.status_code)
+
+# runs command on binded devices and stores output into variable 'results'
+def grab_current_software(commandID) -> list :
+    url = 
 
 
 def pull_device_list():
