@@ -35,12 +35,30 @@ def bind_group(commandID: str, deviceGroupId: str):
     response = requests.request("POST", url, json=payload, headers=headers)
     print(response.status_code)
 
+
 # runs command on binded devices and stores output into variable 'results'
-def grab_current_software(commandID) -> list :
-    url = 
+def grab_current_software(commandID: str) -> str:
+    """run_url = "https://console.jumpcloud.com/api/runCommand"
+    payload = {"_id": commandID}
+    requests.request("POST", run_url, headers=headers, json=payload)"""
+
+    get_url = f"https://console.jumpcloud.com/api/commands/{commandID}/results"
+    query = {"limit": 100}
+    output = json.loads(
+        requests.request("GET", get_url, headers=headers, params=query).text
+    )
+    counter = 0
+    for response in output:
+        print(response["response"]["data"]["output"])
+        counter += 1
 
 
-def pull_device_list():
+# commandID = create_command()
+# bind_group(commandID, "673cf3945525ed00011bf3ac")
+grab_current_software("67606e79e8105bcf99bfde8b")
+
+
+"""def pull_device_list():
     url = f"https://a.simplemdm.com/api/v1/devices?limit=100"
     action = "w"
     # writing device names and ids:
@@ -138,10 +156,9 @@ def grab_apps():
                     url = f"https://a.simplemdm.com/api/v1/devices/{DEVICE_ID}/installed_apps?limit=100&starting_after={last_id}"
                 elif content["has_more"] == False:
                     break
-    return app_data
+    return app_data"""
 
 
-create_command()
 # bind_group("674e01abe71c335713d0eabe", "673cf3945525ed00011bf3ac")
 # pull_device_list()
 # create_db()
