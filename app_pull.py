@@ -32,8 +32,7 @@ def create_command() -> str:
 def bind_group(commandID: str, deviceGroupId: str):
     url = f"https://console.jumpcloud.com/api/v2/commands/{commandID}/associations"
     payload = {"id": deviceGroupId, "op": "add", "type": "system_group"}
-    response = requests.request("POST", url, json=payload, headers=headers)
-    print(response.status_code)
+    requests.request("POST", url, json=payload, headers=headers)
 
 
 # runs command on binded devices and stores output into variable 'results'
@@ -44,13 +43,16 @@ def grab_current_software(commandID: str) -> str:
 
     get_url = f"https://console.jumpcloud.com/api/commands/{commandID}/results"
     query = {"limit": 100}
-    output = json.loads(
+    results = json.loads(
         requests.request("GET", get_url, headers=headers, params=query).text
     )
-    counter = 0
-    for response in output:
-        print(response["response"]["data"]["output"])
-        counter += 1
+    apps = {}
+    # grabs the applications and system_id from the results, and creates a dictionary with apps mapping to the system_id
+    for response in results:
+        pulled_apps = response["response"]["data"]["output"]
+        system_id = response["system"]
+        apps[system_id] = pulled_apps.split()
+    print(apps)
 
 
 # commandID = create_command()
