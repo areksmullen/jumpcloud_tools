@@ -3,7 +3,9 @@ import requests
 import json
 from requests.auth import HTTPBasicAuth
 import os
-import sqlite3
+
+# import sqlite3
+import csv
 from datetime import datetime
 
 
@@ -36,7 +38,7 @@ def bind_group(commandID: str, deviceGroupId: str):
 
 
 # runs command on binded devices and stores output into variable 'results'
-def grab_current_software(commandID: str) -> str:
+def grab_current_software(commandID: str) -> dict:
     """run_url = "https://console.jumpcloud.com/api/runCommand"
     payload = {"_id": commandID}
     requests.request("POST", run_url, headers=headers, json=payload)"""
@@ -47,17 +49,37 @@ def grab_current_software(commandID: str) -> str:
         requests.request("GET", get_url, headers=headers, params=query).text
     )
     apps = {}
+    system_url = "https://console.jumpcloud.com/api/systems/{id}"
     # grabs the applications and system_id from the results, and creates a dictionary with apps mapping to the system_id
-    for response in results:
-        pulled_apps = response["response"]["data"]["output"]
-        system_id = response["system"]
-        apps[system_id] = pulled_apps.split()
-    print(apps)
+    for item in results:
+        pulled_apps = item["response"]["data"]["output"]
+        system_id = item["system"]
+        # grabbing device serial for auditing purposes
+        system_url = f"https://console.jumpcloud.com/api/systems/{system_id}"
+        queryString = {"fields": "serialNumber"}
+        content = json.loads(
+            requests.request(
+                "GET", system_url, headers=headers, params=queryString
+            ).text
+        )
+        serialNum = content["serialNumber"]
+        apps[serialNum] = pulled_apps.split()
+
+    return apps
+
+
+# TODO (arek): add date to file report
+def write_report(app_dict: dict):
+    serials = app_dict.keys()
+    with open("software_audit.csv", "w", newline="") as csv_file:
+        reporter = csv.writer(csv_file)
+        for item in serials:
+            reporter.writerows(item[app_dict[item]])
 
 
 # commandID = create_command()
 # bind_group(commandID, "673cf3945525ed00011bf3ac")
-grab_current_software("67606e79e8105bcf99bfde8b")
+write_report(grab_current_software("67606e79e8105bcf99bfde8b"))
 
 
 """def pull_device_list():
