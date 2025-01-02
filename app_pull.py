@@ -5,10 +5,40 @@ from os import environ
 from subprocess import run, PIPE
 import sqlite3
 from datetime import date
+import boto3
+
 
 # Globals:
-headers = {"x-api-key": environ["JUMPCLOUD_API_KEY"], "content": "application/json"}
+
 bad_apps = []
+region = "us-east-1"
+environ["AWS_DEFAULT_REGION"] = region
+bucket = "arekgcpscoutsuite"
+app_file = "approved_software.txt"
+reportFile = f"{date.today()}_software_report.csv"
+# just for testing
+
+
+# TODO (arek): test this
+def get_secret():
+
+    secret_name = "jc-api-key"
+    region_name = "us-east-1"
+
+    # Create a Secrets Manager client
+    secrets_manager = boto3.client(
+        service_name="secretsmanager", region_name=region_name
+    )
+    get_secret_value_response = secrets_manager.get_secret_value(SecretId=secret_name)
+    secret = loads(get_secret_value_response["SecretString"])
+    return secret["Jumpcloud-API-key"]
+
+
+def grab_approved_list():
+    s3 = boto3.client("s3")
+    bucket = "arekgcpscoutsuite"
+    file = "approved_software.txt"
+    s3.download_file(Filename=app_file, Bucket=bucket, Key=app_file)
 
 
 def create_command() -> str:
@@ -43,7 +73,9 @@ def run_command(commandID: str) -> int:
 # grabs results from command stores output into variable 'results'
 def grab_command_results(commandID: str) -> dict:
     results_url = f"https://console.jumpcloud.com/api/commands/{commandID}/results"
-    resultsQuery = {"limit": 100, "skip": 100}
+    resultsQuery = {
+        "limit": 100,
+    }
     # TODO (arek): need to make a way to retrieve records after the initial 100
     results = loads(
         requests.request("GET", results_url, headers=headers, params=resultsQuery).text
@@ -60,8 +92,6 @@ def collect_report_data(results: dict) -> list:
             approved_apps[approved_apps.index(item)] = item.rstrip("\n")
 
         # compares the found applications to the approved list, and stores the unapproved ones in 'bad_apps'
-
-        # uncompliant_devices = []
         for item in results:
             system_id = item["system"]
             pulled_apps = item["response"]["data"]["output"].split("\n")
@@ -79,13 +109,7 @@ def collect_report_data(results: dict) -> list:
                 if item not in approved_apps and item not in bad_apps:
                     bad_apps.append(item)
                     report_data.append((system_id, serialNum, item))
-
-                    """if system_id not in uncompliant_devices:
-                        uncompliant_devices.append(system_id)"""
-            # report_data.append((system_id, serialNum, device_apps))
-
     return report_data
-    # apps[serialNum] = pulled_apps.split()
 
 
 def create_database():
@@ -119,9 +143,14 @@ def create_report(results: list):
             stdout=PIPE,
         )
         softwarereport.write(report.stdout)
+    s3 = boto3.client("s3")
+    s3.upload_file(Filename=reportFile, Bucket=bucket, Key=reportFile)
+    # TODO(arek): push report up to s3
 
 
 # commandID = create_command()
 # bind_group(commandID, "673cf3945525ed00011bf3ac")
+headers = {"x-api-key": get_secret(), "content": "application/json"}
+grab_approved_list()
 create_database()
 create_report(collect_report_data(grab_command_results("67606e79e8105bcf99bfde8b")))
