@@ -16,7 +16,6 @@ environ["AWS_DEFAULT_REGION"] = region
 bucket = "arekgcpscoutsuite"
 app_file = "approved_software.txt"
 reportFile = f"{date.today()}_software_report.csv"
-
 # number of results to expect from the app_pull. Have to use this since Jumpcloud doesn't
 # have built in pagination like "has_more" like simpleMDM does
 macDevices = 200
@@ -40,7 +39,6 @@ def get_secret():
 def grab_approved_list():
     s3 = boto3.client("s3")
     bucket = "arekgcpscoutsuite"
-    file = "approved_software.txt"
     s3.download_file(Filename=app_file, Bucket=bucket, Key=app_file)
 
 
@@ -95,6 +93,7 @@ def grab_command_results(commandID: str) -> dict:
             ).text
         )
         results = results + results_two
+
     return results
 
 
@@ -162,9 +161,17 @@ def create_report(results: list):
     s3.upload_file(Filename=reportFile, Bucket=bucket, Key=reportFile)
 
 
+def clear_command_results(commandID: str) -> int:
+    url = f"https://console.jumpcloud.com/api/commandresults/{commandID}"
+    response = requests.request("DELETE", url, headers=headers)
+    print(response.status_code)
+
+
 # commandID = create_command()
 # bind_group(commandID, "673cf3945525ed00011bf3ac")
-headers = {"x-api-key": get_secret(), "content": "application/json"}
-grab_approved_list()
-create_database()
-create_report(collect_report_data(grab_command_results("67606e79e8105bcf99bfde8b")))
+headers = {"x-api-key": environ["JUMPCLOUD_API_KEY"], "content": "application/json"}
+# grab_approved_list()
+# create_database()
+# print(len(grab_command_results("67606e79e8105bcf99bfde8b")))
+clear_command_results("677852e3a23c4e093fef35c9")
+# create_report(collect_report_data(grab_command_results("67606e79e8105bcf99bfde8b")))

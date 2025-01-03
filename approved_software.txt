@@ -1,0 +1,1174 @@
+$(PRODUCT_NAME).app
+/Applications/Pages.app.app
+50onPaletteServer.app
+AAM Registration Notifier.app
+
+AAM Updates Notifier.app
+AAMLauncherUtil.app
+AASIapp.app
+ABAssistantService.app
+ABAssistantService.app.app
+ACAI_0_5_3.app
+ACCFinderBundleLoader.app
+ACR_16_2_1_32.app
+AMSEngagementViewService.app
+AOSAlertManager.app
+AOSHeartbeat.app
+AOSPushRelay.app
+AOSUIPrefPaneLauncher.app
+ARDAgent.app
+AVB Audio Configuration.app
+AVB Configuration.app
+AXVisualSupportAgent.app
+About This Mac.app
+Accessibility Inspector.app
+AccessibilityVisualsAgent.app
+AcroLicApp.app
+Acrobat Distiller.app
+Acrobat Update Helper.app
+Acrobat online.app
+Activity Monitor.app
+Add Printer.app
+AddPrinter.app
+AddressBookManager.app
+AddressBookSourceSync.app
+AddressBookSync.app
+AddressBookUrlForwarder.app
+Adobe.app
+Adobe Acrobat.app
+Adobe Acrobat Reader.app
+Adobe Acrobat Reader DC.app
+Adobe Acrobat Updater.app
+Adobe After Effects 2024.app
+Adobe After Effects Render Engine 2024.app
+Adobe Application Updater.app
+Adobe CEF Helper.app
+Adobe CEF Helper EH.app
+Adobe CEF Helper NP.app
+Adobe Crash Handler.app
+Adobe Crash Reporter.app
+Adobe Creative Cloud Diagnostics.app
+Adobe Desktop Service.app
+Adobe Illustrator 2021.app
+Adobe Illustrator 2022.app
+Adobe Illustrator 2023.app
+Adobe Illustrator 2024.app
+Adobe InDesign 2021.app
+Adobe InDesign 2022.app
+Adobe InDesign 2023.app
+Adobe InDesign 2024.app
+Adobe Lightroom.app
+Adobe Lightroom Classic.app
+Adobe Media Encoder 2024.app
+Adobe Photoshop.app
+Adobe Photoshop 2021.app
+Adobe Photoshop 2022.app
+Adobe Photoshop 2023.app
+Adobe Photoshop 2024.app
+Adobe Photoshop CC 2019.app
+Adobe Premiere Pro 2024.app
+Adobe Update Helper.app
+Adobe XD.app
+AdobeCleanUpUtility.app
+AdobeGCClient.app
+AdobeIPCBroker.app
+AinuIM.app
+AirDrop.app
+AirPlayUIAgent.app
+AirPort Base Station Agent.app
+AirPort Utility.app
+AirPort-Dienstprogramm.app
+AirScanLegacyDiscovery.app
+AirScanScanner.app
+Ajouter une imprimante.app
+Aktien.app
+Aktivitätsanzeige.app
+Alfred.app
+Anaconda-Navigator.app
+Android Studio.app
+ApacheDirectoryStudio.app
+Aperçu.app
+App Store.app
+AppSSOAgent.app
+Appareils jumelés.app
+Apple Corporate Insight and Detection.app
+Apple Corporate Insight and Detection Agent.app
+Apple-Corporate-Insight-and-Detection-LiveResponse.app
+AppleConnect.app
+AppleConnectAgent.app
+AppleCorporateSign.app
+AppleGraphicsWarning.app
+AppleMobileDeviceHelper.app
+AppleMobileSync.app
+AppleScript Utility.app
+AppleScript-Dienstprogramm.app
+AquaAppearanceHelper.app
+Arc.app
+Archive Utility.app
+Archivierungsprogramm.app
+Asana.app
+AskPermissionUI.app
+AskToMessagesHost.app
+Assistant.app
+Assistant Boot Camp.app
+Assistant de certification.app
+Assistant d’effacement.app
+Assistant d’évaluation.app
+Assistant migration.app
+Assistant réglages.app
+Assistant réglages Bluetooth.app
+Assistive Control.app
+Atom.app
+Audio MIDI Setup.app
+Audio-MIDI-Setup.app
+AuthHelperTool.app
+Authy.app
+AutoFillPanelService.app
+AutoImporter.app
+AutomationModeUI.app
+Automator.app
+Automator Application Stub.app
+Automator Installer.app
+Automator-Installationsprogramm.app
+À propos de ce Mac.app
+BBEdit.app
+BBedit.app
+BDLDaemon.app
+BDUpdDaemon.app
+BDUpgDaemon.app
+BackgroundTaskManagementAgent.app
+Backup and Sync.app
+Backup and Sync from Google.app
+Batteries.app
+BetterSnapTool.app
+Beyond Compare.app
+Bildschirmfoto.app
+Bildschirmfreigabe.app
+Bildschirmzeit.app
+Bitdefender Endpoint Security Tools.app
+BlueJeans.app
+Bluetooth File Exchange.app
+Bluetooth Setup Assistant.app
+Bluetooth-Assistent.app
+Bluetooth-Datenaustausch.app
+BluetoothUIServer.app
+BluetoothUIService.app
+Books.app
+Boot Camp Assistant.app
+Boot Camp-Assistent.app
+Bourse.app
+Box.app
+Box Autoupdater.app
+Box Device Trust.app
+Box Edit.app
+Box Helper.app
+Box Local Com Server.app
+Box Tools Custom Apps.app
+Brackets.app
+Brave Browser.app
+Brother HL-L2305 series.app
+Brother HL-L2370DW series.app
+Brother Status Monitor.app
+Brother iPrint&Scan.app
+BrowserStack Local.app
+BrowserStackLocal.app
+Build Web Page.app
+Bücher.app
+CC Troubleshooter.app
+CCLibrary.app
+CCXP_5_3_0.app
+CCXP_5_4_1.app
+CCXProcess.app
+CIJAutoSetupTool.app
+CIMFindInputCodeTool.app
+CLion.app
+COCM_1_0_32.app
+COMP_1_3_32.app
+COPS_1_0_32.app
+CORG_1_1_32.app
+COSY_7_1_1.app
+COSY_7_1_2.app
+COSY_7_1_2_32.app
+CP210xVCPDriver.app
+Calculator.app
+Calculette.app
+Calendar.app
+CalendarFileHandler.app
+Calendrier.app
+Calibration Assistant.app
+Calm.app
+Camtasia 2019.app
+Canon GX6000 series.app
+Canon IJ Printer Utility.app
+Canon IJScanner2.app
+Canon IJScanner4.app
+Canon IJScanner6.app
+Canon MG3600 series.app
+Canon TS6100 series.app
+CapCut.app
+Captive Network Assistant.app
+Capture d’écran.app
+Centre de contrôle.app
+Centre de gestion des logiciels.app
+Centre de notifications.app
+Certificate Assistant.app
+CharacterPalette.app
+Chat.app
+Chess.app
+ChineseTextConverterService.app
+ChinesischerTextKonvertierungsService.app
+Chrome Web Store - Extensions.app
+CinematicFramingOnboardingUI.app
+Cisco AnyConnect Secure Mobility Client.app
+Cisco AnyConnect Socket Filter.app
+Cisco WebEx Meeting Center.app
+Cisco WebEx Start.app
+Cisco Webex Meetings.app
+Cisco Webex Start.app
+ClassroomStudentMenuExtra.app
+Clock.app
+Close All Notifications.app
+Cocoa-AppleScript Applet.app
+ColorSlurp.app
+ColorSync Utility.app
+ColorSync-Dienstprogramm.app
+Colorimètre numérique.app
+Commande universelle.app
+Commandline.app
+CommentsAPI.app
+Computer.app
+Configuration audio AVB.app
+Configuration audio et MIDI.app
+Configuration des actions de dossier.app
+Conflict Resolver.app
+Console.app
+ConsumeRestAPI.app
+Contact Sheets.app
+Contacts.app
+ContinuityCaptureOnboardingUI.app
+Control Center.app
+Control Centre.app
+ControlCenter.app
+ControlStrip.app
+Core Sync.app
+CoreLocationAgent.app
+CoreServicesUIAgent.app
+Coverage Details.app
+Crash Reporter.app
+Create ML.app
+Creative Cloud.app
+Creative Cloud Content Manager.app
+Creative Cloud Desktop App.app
+Creative Cloud Helper.app
+Creative Cloud Installer.app
+Creative Cloud Uninstaller.app
+Création de page web.app
+DB Browser for SQLite.app
+DBeaver.app
+DFRHUD.app
+DVD Player.app
+Darkroom.app
+Dashboard.app
+Database Events.app
+DbVisualizer.app
+DefaultLightningApp.app
+Designer.app
+Desk View.app
+Desk View.app
+Diagnose für drahtlose Umgebungen.app
+Diagnostics Reporter.app
+Diagnostics sans fil.app
+Dictation.app
+Dictée vocale.app
+Dictionary.app
+Dictionnaire.app
+Dienstprogramm für Erweiterungssteckplätze.app
+Dienstprogramm für Speichersteckplätze.app
+Digital Color Meter.app
+Digital Colour Meter.app
+Directory Utility.app
+DiscHelper.app
+Disk Utility.app
+DiskImageMounter.app
+DiskImages UI Agent.app
+Display Calibrator.app
+DisplayLink Manager.app
+DisplayLink Software Uninstaller.app
+Dock.app
+Docker.app
+Docker Desktop.app
+DockerHelper.app
+Docs.app
+Documents for Google Documents.app
+Doxie.app
+Droplet with Settable Properties.app
+Drucker hinzufügen.app
+DuckDuckGo.app
+DuckDuckGo Privacy for Safari.app
+Dwell Control.app
+EEventManager.app
+EPFaxAutoSetupTool.app
+EPIJAutoSetupTool2.app
+EPRemoteAutoSetupTool.app
+EPSON ES0226.app
+EPSON ET-2760 Series.app
+EPSON ET-2850 Series.app
+EPSON ET-8550 Series.app
+EPSON Scanner.app
+EPSON Software Updater.app
+EPSON Software Updater Agent.app
+EPTiny.app
+Eclipse.app
+Eclipse Installer.app
+EdgeUpdater.app
+EmojiFunctionRowIM.app
+Endpoint Security for Mac.app
+Endpoint Security for Mac Uninstaller.app
+EndpointSecurityforMac.app
+EndpointSecurityforMacUninstaller.app
+Epson Connect Printer Setup.app
+Epson Low Ink Reminder.app
+Epson Photo+.app
+Epson Photo+ Tool.app
+Epson Printer Utility 4.app
+Epson Printer Utility Lite.app
+Epson Remote Print Utility.app
+Epson Scan 2.app
+Epson Scan 2 Utility.app
+Epson ScanSmart.app
+Epson Scanner Monitor.app
+EpsonLowInkReminderAgent.app
+EpsonNet Config.app
+Erase Assistant.app
+Erinnerungen.app
+EscrowSecurityAlert.app
+Evernote.app
+Expansion Slot Utility.app
+Échange de fichiers Bluetooth.app
+Échecs.app
+Éditeur de script.app
+Énonciation du système.app
+Étalonnage de moniteur.app
+Étalonnage du Pro Display.app
+FAX Utility.app
+FaceTime.app
+Falcon.app
+Falcon Notifications.app
+Family.app
+Family (OSX).app
+Fax Receive Monitor.app
+Feedback Assistant.app
+Feedback-Assistent.app
+Festplatten­dienstprogramm.app
+Figma.app
+FigmaAgent.app
+FileMerge.app
+FileSystemUIAgent.app
+Find My.app
+FindMyMacMessenger.app
+Finder.app
+FinderHelper.app
+Firefox.app
+Firefox - 43.app
+Firefox Developer Edition.app
+FirmwareUpdateTool.app
+FirmwareUpdateTool34.app
+Folder Actions Setup.app
+FolderActionsDispatcher.app
+FollowUpUI.app
+FollowUpUI.app.app
+Font Book.app
+FontRegistryUIAgent.app
+Fotos.app
+Freeform.app
+FrontendAgent.app
+GIL EPSON WF-3620 Series.app
+GIMP.app
+GIMP-2.10.app
+GPG Keychain.app
+GPG Mail Upgrader.app
+GPG Suite Updater.app
+GPGSuite_Updater.app
+Game Center.app
+Games.app
+GarageBand.app
+Geführte Softwareaktualisierung.app
+Gekoppelte Geräte.app
+Gestion du stockage.app
+GitHub Desktop.app
+Gmail.app
+GoFullPage - Full Page Screen Capture Chrome Extension.app
+GoToMeeting.app
+GoToMeeting Recording Manager.app
+GoToOpener.app
+Google Calendar.app
+Google Chrome.app
+Google Chrome 2.app
+Google Chrome 3.app
+Google Docs.app
+Google Drive.app
+Google Keep - Notes and Lists.app
+Google Meet.app
+Google Sheets.app
+Google Slides.app
+Google Software Update.app
+GoogleSoftwareUpdateAgent.app
+GoogleSoftwareUpdateDaemon.app
+GoogleUpdater.app
+Grapher.app
+Guestroom Printer.app
+HP Alerts.app
+HP Color LaserJet M452nw 2.app
+HP DeskJet 2700 series.app
+HP DeskJet 3630 series.app
+HP Deskjet 2540 series 2.app
+HP Device Monitor Manager.app
+HP ENVY 6400 series.app
+HP ENVY Inspire 7200 series.app
+HP Easy Scan.app
+HP Easy Start.app
+HP Easy Start 4.app
+HP Email Alerts.app
+HP Event Status.app
+HP Fax Archive.app
+HP OfficeJet 4650 series.app
+HP OfficeJet Pro 8710.app
+HP OfficeJet Pro 9010 series.app
+HP Officejet Pro 8100 2-1.app
+HP Product Research Manager.app
+HP Scanner 3.app
+HP Smart.app
+HP Tango.app
+HP Uninstaller.app
+HP Utility.app
+HPScanner.app
+HTML5App.app
+HTTP Archive Viewer.app
+Harvest.app
+Help Viewer.app
+HelpViewer.app
+Helper.app
+HelperTool.app
+HindiIM.app
+Home.app
+Homebrew.app
+Horloge.app
+IDLE.app
+IDLE 3.app
+IDSRemoteURLConnectionAgent.app
+IMAutomaticHistoryDeletionAgent.app
+IMTransferAgent.app
+IOUIAgent.app
+Identity API Scope Approval UI.app
+Image Capture.app
+Image Events.app
+ImageCaptureService.app
+InTouch.app
+Info.plist.app.app
+Informations sur la couverture.app
+Informations système.app
+InkServer.app
+Inkscape.app
+Insomnia.app
+Install.app
+Install Command Line Developer Tools.app
+Install Spotify.app
+Install Spotify 2.app
+Install in Progress.app
+Install macOS Big Sur.app
+Install macOS Monterey.app
+InstallBoxTools.app
+Installation en cours.app
+Installationsprogramm.app
+Installer.app
+Installer Progress.app
+Instruments.app
+Intel Power Gadget.app
+IntelliJ IDEA.app
+IntelliJ IDEA CE.app
+JProfiler.app
+JapaneseIM.app
+JapaneseIM-KanaTyping.app
+JapaneseIM-RomajiTyping.app
+Jar Launcher.app
+Java 8 Update 201.app
+Java 8 Update 211.app
+Java Mission Control.app
+Java Updater.app
+Java Web Start.app
+JavaLauncher.app
+Jira.app
+Jumelage de la SmartCard.app
+JumpCloud Go.app
+JumpCloud Password Manager.app
+JumpCloud Remote Assist.app
+JumpCloudGo.app
+JumpCloudServiceAccount.app
+Jumpcloud.app
+Jumpcloud Go.app
+JustJoin.app
+KASU_2_0_32.app
+Kalender.app
+Kalibrierungsassistent.app
+Karabiner-AppIconSwitcher.app
+Karabiner-DriverKit-VirtualHIDDeviceClient.app
+Karabiner-Elements.app
+Karabiner-EventViewer.app
+Karabiner-Menu.app
+Karabiner-MultitouchExtension.app
+Karabiner-NotificationWindow.app
+Karten.app
+Keeper.app
+Keeper Import.app
+Keeper Import 2.app
+Keeper Import 3.app
+Keeper Import 4.app
+Keeper Password Manager.app
+Keeper for Safari.app
+KerberosMenuExtra.app
+KerberosMenuExtra.app.app
+KeyStore Explorer.app
+KeyboardAccessAgent.app
+KeyboardSetupAssistant.app
+KeyboardViewer.app
+Keychain Access.app
+Keychain Circle Notification.app
+Keynote.app
+Kindle.app
+Kindle Classic.app
+Koa11y.app
+Konfliktlöser.app
+Konsole.app
+KoreanIM.app
+KrispAssistant.app
+Kurzbefehle.app
+LCC Connection Utility.app
+LCC Installer.app
+LCC Pilot.app
+LCC Uninstaller.app
+LCCDaemon.app
+LIBS_3_13_3.app
+LIBS_3_22_1.app
+LIBS_3_24_2.app
+LIBS_3_25_4.app
+LIBS_3_25_5.app
+LIBS_4_4_7.app
+LIBS_4_5.app
+LOGINserver.app
+LaTeXiT.app
+Language Chooser.app
+Launchpad.app
+LegacyScanEventHandler.app
+Lens.app
+Lexmark.app
+Lexmark MC2535adwe.app
+Lexmark XC4140.app
+LexmarkXC4140.app
+Libraries.app
+LibreOffice.app
+Linguist.app
+LinkedNotesUIService.app
+Live Captions.app
+LiveSpeech.app
+LiveTranscriptionAgent.app
+Livre des polices.app
+Livres.app
+Localiser.app
+LocationMenu.app
+LogTransport.app
+LogTransport2.app
+Logi Bolt.app
+Logi Bolt Installer.app
+Logi Capture.app
+Logi Capture Uninstaller.app
+Logi Options.app
+Logi Options Uninstaller.app
+Logi Options Updater.app
+Logi Options+.app
+Logi Options+ Installer.app
+Logi Voice.app
+LogiFacecam.app
+LogiMgr Installer 9.40.75.app
+LogiMgrDaemon.app
+Logic Pro.app
+Logitech Capture Updater.app
+Logitech Unifying Software.app
+Logitech Updater.app
+LogitechGamingInstaller.app
+Loom.app
+Löschassistent.app
+MRT.app
+MTLReplayer.app
+MacVim.app
+Magnet.app
+Mail.app
+MakePDF.app
+Malwarebytes.app
+Managed Software Center.app
+Managed Software Centre.app
+ManagedClient.app
+Maps.app
+MassStorageCamera.app
+MediaMLPluginApp.app
+Meeting Owl.app
+Meld.app
+MemServerUI.app
+Memory Slot Utility.app
+Menu Bar UTC.app
+Menu des scripts.app
+Messages.app
+Météo.app
+Microsoft AU Bootstrapper.app
+Microsoft AutoUpdate.app
+Microsoft Edge.app
+Microsoft Error Reporting.app
+Microsoft Excel.app
+Microsoft Excel.app.app
+Microsoft OneNote.app
+Microsoft Outlook.app
+Microsoft PowerPoint.app
+Microsoft Teams.app
+Microsoft Teams (work or school).app
+Microsoft Teams classic.app
+Microsoft To Do.app
+Microsoft Update Assistant.app
+Microsoft Word.app
+Microsoft Word.app.installBackup.app
+Microsoft.AspNetCore.App.app.app
+Migration Assistant.app
+Migrations­assistent.app
+Mindjet MindManager.app
+MiniTerm.app
+Miro.app
+Mirror My Screen.app
+Mise à jour de logiciels.app
+Mission Control.app
+Mitteilungszentrale.app
+MobileDeviceUpdater.app
+MongoDB Compass.app
+Moniteur d’activité.app
+MonitorControl.app
+MunkiStatus.app
+Music.app
+Music Recognition.app
+Musik.app
+Musique.app
+MySheerID.app
+NIHardwareAgent.app
+NIHostIntegrationAgent.app
+Nachrichten.app
+Native Access.app
+Native Access Helper.app
+NativeMessagingHost.app
+NetAuthAgent.app
+Network.app
+Network Utility.app
+Netzwerk.app
+Netzwerkdienstprogramm.app
+NewApp.app
+News.app
+NexiGo Webcam Settings.app
+Notes.app
+Notification.app
+Notification.app
+Notification Center.app
+Notification Centre.app
+Notizen.app
+Notizzettel.app
+NowPlayingTouchUI.app
+Nudge.app
+Numbers.app
+OBEXAgent.app
+ODSAgent.app
+OSDUIHelper.app
+Obsidian.app
+Obsidian 2.app
+Office.app
+OfficeLicensingHelper.app
+Officejet Pro 8100.app
+Ollama.app
+OneDrive.app
+OneDriveUpdaterDaemon.app
+OnyX.app
+Opalytics Office Jet Pro 8720.app
+Open XML for Excel.app
+Opera.app
+Ordinateur.app
+Ordneraktionen konfigurieren.app
+PCAutoSaveMng.app
+PCAutoSaveUninstall.app
+PDX Office LexmarkXC4140.app
+PHSP_23_1_1_32.app
+PHSP_25_1_32.app
+PIPAgent.app
+PTPCamera.app
+PTUpdate.app
+Packages.app
+Pages.app
+Paint S.app
+Paintbrush.app
+Paired Devices.app
+ParentalControls.app
+ParentalControls.app.app
+Partage d’écran.app
+Pass Viewer.app
+PeopleMessageService.app
+Photo Booth.app
+Photo Library Migration Utility.app
+Photos.app
+Photos Agent.app
+Plans.app
+PluginIM.app
+Podcasts.app
+PodcastsAuthAgent.app
+Postgres.app
+Postman.app
+Postman 2.app
+Postman Agent.app
+PowerChime.app
+PressAndHold.app
+Preview.app
+PreviewShell.app
+Préférences Système.app
+Présentation de VoiceOver.app
+Prime Video.app
+Print Center.app
+Print Centre.app
+PrinterProxy.app
+Pro Display Calibrator.app
+Problem Reporter.app
+Profile Installer.app
+ProfileHelper.app
+Profilinstallation.app
+Programme de désinstallation de Logi Options.app
+Programme de mise à jour Rosetta 2.app
+Programme de téléchargement de parole.app
+Programme d’installation.app
+Programme d’installation de profil.app
+Programme d’installation d’Automator.app
+Programme d’installation d’apps iOS.app
+PubSubAgent.app
+PyCharm.app
+PyCharm CE.app
+Python.app
+Python Launcher.app
+Python Launcher 3.app
+Qt Creator.app
+QtWebEngineProcess.app
+Quick Look Simulator.app
+QuickLookUIHelper.app
+QuickTime Player.app
+QuranMajeed-AlBaqara.app
+R.app
+RAC1 HP OfficeJet.app
+RDM.app
+RStudio.app
+RTProtectionDaemon.app
+Raccourcis.app
+Rappels.app
+RapportUIAgent.app
+Raycast.app
+Reality Composer.app
+Reality Composer Pro.app
+Recents.app
+Rechner.app
+Recursive File Processing Droplet.app
+Recursive Image File Processing Droplet.app
+RegisterPluginIMApp.app
+Reminders.app
+Remote Desktop Message.app
+RemotePrintIODaemon.app
+RemotePrintIOHelper.app
+ReportPanic.app
+Resso.app
+Récents.app
+Réglages Système.app
+Réseau.app
+Résolution des conflits.app
+RingCentral.app
+RingCentral Meetings.app
+Robo 3T.app
+Rosetta 2 Updater.app
+Ruler.app
+SCIM.app
+SF Symbols.app
+SMJobBlessHelper.app
+SPRK_57_1_12.app
+SQLDeveloper 3.app
+SQLWorkbenchJ.app
+SSAssistanceCursor.app
+SSDragHelper.app
+SSInvitationAgent.app
+SSMenuAgent.app
+STMUIHelper.app
+Safari.app
+Samsung M283x Series (SEC30CDA7FDCBD2).app
+Save as Adobe PDF.app
+ScanEventHandler.app
+Schach.app
+Schlüsselbund­verwaltung.app
+Schriftsammlung.app
+Screaming Frog SEO Spider.app
+Screen Sharing.app
+Screen Time.app
+ScreenReaderUIServer.app
+ScreenSaverEngine.app
+Screenshot.app
+Script Editor.app
+Script Menu.app
+ScriptMonitor.app
+SecurityNetworkInstallerApp.app
+Sequel Pro.app
+Service de résumé.app
+SettingsDaemon.app
+Setup.app
+Setup Assistant.app
+Sélecteur de langue.app
+SheerID - Slack.app
+Sheets.app
+Shoptalk 2023.app
+Shortcat.app
+ShortcutDroplet.app
+Shortcuts.app
+Shortcuts Events.app
+ShortcutsActions.app
+SimpleMDM Agent.app
+SimpleMDMAgent.app
+Simulator.app
+Siri.app
+Sketch.app
+Skitch.app
+Skript-Menü.app
+Skripteditor.app
+Skype.app
+Skype for Business.app
+Skype.app.app
+Slack.app
+Slack 2.app
+Slack Messages.app
+Slides.app
+Slido.app
+Slido Admin.app
+Smart Countdown Timer.app
+SmartCard Pairing.app
+SmartCard-Verknüpfung.app
+SmartGit.app
+SmartGit Preview 15.app
+SmartSynchronize.app
+Snagit.app
+Snagit 2020.app
+Snagit 2021.app
+SocialPushAgent.app
+Software Update.app
+SoftwareUpdateNotificationManager.app
+Softwareupdate.app
+Sonos.app
+Sourcetree.app
+SpacesTouchBarAgent.app
+Spectacle.app
+Speech Downloader.app
+SpeechRecognitionServer.app
+SpeechSynthesisServer.app
+SpeechSynthesizerAuditor.app
+Speicherverwaltung.app
+SpokesUpdateService.app
+Spotify.app
+Spotlight.app
+Sprach-Downloader.app
+Sprachmemos.app
+StageManagerEducation.app
+StageManagerOnboarding.app
+StandaloneUpdater.app
+StandaloneUpdaterDaemon.app
+StatusMonitor.app
+SteelSeries ExactMouse Tool.app
+SteelSeries GG.app
+SteelSeries GG Uninstaller.app
+Stickies.app
+Stocks.app
+Stocks Widget.app
+Storage Management.app
+Studio 3T.app
+Sublime Text.app
+Sublime Text (3211).app
+Sublime Text (3211) (3211).app
+Summary Service.app
+SyncReporter.app
+SyncServer.app
+System Events.app
+System Image Utility.app
+System Information.app
+System Preferences.app
+System Settings.app
+System Speech.app
+System Speech.app.app
+System dashboard - Jira.app
+SystemUIServer.app
+Systemassistent.app
+System­einstellungen.app
+System­informationen.app
+TCIM.app
+TCUpdate.app
+TIDAL.app
+TMHelperAgent.app
+TSLicensingHelper.app
+TV.app
+TYIM.app
+Tableau Desktop 2019.1.app
+Tableau Desktop 2022.3.app
+Tableau Desktop 2022.4.app
+TamilIM.app
+TeX Live Utility.app
+TeXShop.app
+TeamsUpdaterDaemon.app
+TechSmith.app
+TechSmith Capture.app
+Temps d’écran.app
+Terminal.app
+TextEdit.app
+TextInputMenuAgent.app
+TextInputSwitcher.app
+TextMate.app
+The Unarchiver.app
+ThermalTrap.app
+Ticket Viewer.app
+Ticket-Viewer.app
+Tidepool Uploader.app
+Time Machine.app
+Tips.app
+TrackpadIM.app
+Transfert d’images.app
+TransliterationIM.app
+Trello.app
+Trousseaux d’accès.app
+Tunnelblick.app
+Type4Camera.app
+TypeIt4Me.app
+UASharedPasteboardProgressUI.app
+UE4EditorServices.app
+UIKitSystem.app
+USB Display Device.app
+USBAppControl.app
+USBDisplayDriverAppLauncher.app
+USBserver.app
+UTM.app
+Uhr.app
+UnifiedPluginInstallerAgent.app
+Uninstall AnyConnect.app
+Uninstall OpenVPN Connect.app
+Uninstall Product.app
+Uninstall Razer Synapse.app
+Uninstaller.app
+Universal Control.app
+UniversalAccessControl.app
+UniversalAccessHUD.app
+UnmountAssistantAgent.app
+UserNotificationCenter.app
+Utilitaire AirPort.app
+Utilitaire AppleScript.app
+Utilitaire ColorSync.app
+Utilitaire VoiceOver.app
+Utilitaire de disque.app
+Utilitaire de logement de mémoire.app
+Utilitaire de logement d’extension.app
+Utilitaire de réseau.app
+Utilitaire d’annuaire.app
+Utilitaire d’archive.app
+Über diesen Mac.app
+VLC.app
+VMware Horizon Client.app
+VMware Horizon URL Filter.app
+VN.app
+Vernier Graphical Analysis.app
+Verzeichnisdienste.app
+VietnameseIM.app
+VirtualBox.app
+VirtualScanner.app
+Viscosity.app
+ViscosityHelper.app
+Visual Studio.app
+Visual Studio Code.app
+Visual Studio Code 2.app
+VisualVM.app
+Visualiseur de ticket.app
+Voice Control Guide.app
+Voice Memos.app
+VoiceOver.app
+VoiceOver Quickstart.app
+VoiceOver Utility.app
+VoiceOver-Dienstprogramm.app
+VoiceOver-Kurzübersicht.app
+Vorschau.app
+WBR Eventsagcinvokerutility.app
+Wallpaper.app
+Watch Face Help.app
+Weather.app
+Web Gallery.app
+WebKitPluginHost.app
+Webex.app
+Webex Events.app
+Webex Installer.app
+WebexAppLauncher.app
+WiFiAgent.app
+WidgetKit Simulator.app
+WindowManager.app
+WindowManagerShowDesktopEducation.app
+Wireless Diagnostics.app
+Wish.app
+WorkflowAppControl.app
+WorkoutAlert-Mac.app
+XCPreviewAgent.app
+XGimp.app
+XProtect.app
+XQuartz.app
+Xcode.app
+Xcode Previews.app
+Xcode Server Builder.app
+Xcode Server Builder.app.app
+YouTube.app
+YouTube Music.app
+YouTube Music Desktop App.app
+YouTube TV.app
+Yubico Authenticator.app
+Yuji Henry (TCS) - Confluence.app
+Zendesk.app
+Zeplin.app
+Zertifikatsassistent.app
+Zifferblatt-Hilfe.app
+Zoom.app
+ZoomAutoUpdater.app
+ZoomClips.app
+Zuletzt benutzt.app
+Zusammenfassung.app
+adobe genuine monitor.app
+adobe_licensing_helper.app
+adobe_lichelper.app
+adobe_licutil.app
+agcinvokerutility.app
+aomhost.app
+app_name.app
+asannotation2.app
+atmsupload.app
+autoSetupTool.app
+bash.app
+bdredline.app
+cai-helper.app
+check_afp.app
+com.adobe.ARMDC.Communicator.app
+com.adobe.ARMDC.SMJobBlessHelper.app
+com.apple.AuthenticationServicesCore.AuthenticationServicesAgent.app
+com.apple.ist.ds.appleconnect.app
+com.apple.ist.ds.appleconnect.appleconnectuninstall.app
+com.apple.ist.ds.appleconnect.firstaidd.app
+com.apple.ist.ds.appleconnect.kdctunnel.app
+com.apple.ist.ds.rlogd.app
+com.apple.ist.feedbackkit.FKDaemonService.app
+com.bluejeansnet.PrivilegedHelper.app
+com.docker.socket.app
+com.jumpcloud.JumpCloudGoHelper.app
+com.microsoft.openxml.excel.app
+commandFilter.app
+commandtohp.filter.app
+consumeAPI.app
+convertpdf.app
+dataloader.app
+eaptlstrust.app
+eprastertopng.app
+epsonfax.app
+epsonremote.app
+fax.backend.app
+group.is.workflow.my.app
+hpPreProcessing.filter.app
+hpdot4d.app
+https+++aa15-174-174-72-69.ngrok-free.app
+https+++sheerid.hyperproof.app
+https://app.napster.com/.app.app.app
+https://chrome.google.com/webstore/detail/google-input-tools/mclkkofklkfljcocdinagocijmpgbhab.app
+https://gsuite.google.com/marketplace/app/highlight_tool/65634221687.app
+iCloud.app
+iCloud Drive.app
+iCloud+.app
+iCloudUserNotificationsd.app
+iMazing Profile Editor.app
+iMovie.app
+iOS App Installer.app
+iOS System Repair.app
+iOS-App-Installationsprogramm.app
+iTerm.app
+iTerm 2.app
+identityservicesd.app
+imagent.app
+installer-helper.app
+jumpcloud-agent.app
+jumpcloud-assist-launcher.app
+jumpcloud-assist-service.app
+jumpcloud-macos-update-notifications.app
+jumpcloud-user-agent.app
+karabiner_console_user_server.app
+karabiner_grabber.app
+karabiner_observer.app
+karabiner_session_monitor.app
+krisp.app
+krisp Uninstaller.app
+launchd_startx.app
+lghub.app
+lghub_updater.app
+ln.app
+loginwindow.app
+m_agent.app
+macOS Ventura installieren.app
+monitor.app
+nbagent.app
+open.app
+org.eclipse.equinox.app
+org.gpgtools.Libmacgpg.xpc.app
+packages_dispatcher.app
+pdftopdf.filter.app
+pgAdmin 4.app
+privileged_startx.app
+project1.app
+python.app
+pythonwrapper.app
+qdbusviewer.app
+qlmanage.app
+qml.app
+qqem.app
+quicklookd.app
+raster2pclm.filter.app
+rastertoepfax.app
+rastertofax.filter.app
+rcd.app
+reMarkable.app
+screencaptureui.app
+sh.app
+simplemdm.app
+soagent.app
+sociallayerd.app
+stackbuilder.app
+startup.app
+storeuid.app
+syncuid.app
+terminal-notifier.app
+terminal-share.app
+tunnelblickd.app
+uninstall-postgresql.app
+universalAccessAuthWarn.app
+us.zoom.ZoomDaemon.app
+vmnetd.app
+zoom.us.app
+.localized
+Utilities
+Adobe Acrobat DC
+Adobe Creative Cloud
+Adobe Illustrator 2023
+Adobe InDesign 2023
+Adobe Photoshop 2023
+Python 3.12
+Python 3.11
+Emacs.app
+HP
+Hewlett-Packard
+Snagit 2024.app
+.DS_Store
+logioptionsplus.app
+Adobe Photoshop 2025
