@@ -7,27 +7,23 @@ import sqlite3
 from datetime import date
 import boto3
 
-
+# TODO (arek): add exception handling
 # Globals:
-
 bad_apps = []
+resultIds = []
 region = "us-east-1"
 environ["AWS_DEFAULT_REGION"] = region
+# TODO (arek): replace with correct bucket in prod aws
 bucket = "arekgcpscoutsuite"
 app_file = "approved_software.txt"
 reportFile = f"{date.today()}_software_report.csv"
-
-# number of results to expect from the app_pull. Have to use this since Jumpcloud doesn't
-# have built in pagination like "has_more" like simpleMDM does
+# This will need to be periodically updated as we scale up.
 macDevices = 200
-# just for testing
 
 
 def get_secret():
-
     secret_name = "jc-api-key"
     region_name = "us-east-1"
-
     # Create a Secrets Manager client
     secrets_manager = boto3.client(
         service_name="secretsmanager", region_name=region_name
@@ -40,37 +36,7 @@ def get_secret():
 def grab_approved_list():
     s3 = boto3.client("s3")
     bucket = "arekgcpscoutsuite"
-    file = "approved_software.txt"
     s3.download_file(Filename=app_file, Bucket=bucket, Key=app_file)
-
-
-def create_command() -> str:
-    url = "https://console.jumpcloud.com/api/commands"
-    payload = {
-        "command": "#!/bin/bash\nls /Applications",
-        "commandType": "mac",
-        "LaunchType": "manual",
-        "name": "Pull Software - Macs",
-        "sudo": True,
-        # if you use 'root' you will get a 400 error.
-        "user": "000000000000000000000000",
-    }
-
-    response = requests.request("POST", url, json=payload, headers=headers)
-    commandID = loads(response.text)["_id"]
-    return commandID
-
-
-def bind_group(commandID: str, deviceGroupId: str):
-    url = f"https://console.jumpcloud.com/api/v2/commands/{commandID}/associations"
-    payload = {"id": deviceGroupId, "op": "add", "type": "system_group"}
-    requests.request("POST", url, json=payload, headers=headers)
-
-
-def run_command(commandID: str) -> int:
-    run_url = "https://console.jumpcloud.com/api/runCommand"
-    payload = {"_id": commandID}
-    return requests.request("POST", run_url, headers=headers, json=payload).status_code
 
 
 # grabs results from command stores output into variable 'results'
@@ -79,7 +45,6 @@ def grab_command_results(commandID: str) -> dict:
     resultsQuery = {
         "limit": 100,
     }
-    # TODO (arek): need to make a way to retrieve records after the initial 100
     results = loads(
         requests.request("GET", results_url, headers=headers, params=resultsQuery).text
     )
@@ -95,6 +60,14 @@ def grab_command_results(commandID: str) -> dict:
             ).text
         )
         results = results + results_two
+
+    return results
+
+
+# grabs result ids from results and puts them in the 'resultIds' list
+def hijack_resultsids(results: dict) -> dict:
+    for item in results:
+        resultIds.append(item["response"]["id"])
     return results
 
 
@@ -128,7 +101,7 @@ def collect_report_data(results: dict) -> list:
 
 
 def create_database():
-    # creating databaseß
+    # creating database
     con = sqlite3.connect("software.db")
     cur = con.cursor()
 
@@ -162,9 +135,15 @@ def create_report(results: list):
     s3.upload_file(Filename=reportFile, Bucket=bucket, Key=reportFile)
 
 
-# commandID = create_command()
-# bind_group(commandID, "673cf3945525ed00011bf3ac")
+def clear_command_results(result_ids: list):
+    for result in result_ids:
+        url = f"https://console.jumpcloud.com/api/commandresults/{result}"
+        requests.request("DELETE", url, headers=headers).raise_for_status
+
+
+cmdId = "67606e79e8105bcf99bfde8b"
 headers = {"x-api-key": get_secret(), "content": "application/json"}
 grab_approved_list()
 create_database()
-create_report(collect_report_data(grab_command_results("67606e79e8105bcf99bfde8b")))
+create_report(collect_report_data(hijack_resultsids(grab_command_results({cmdId}))))
+clear_command_results(resultIds)
