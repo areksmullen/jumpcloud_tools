@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-import requests
+from requests import request
 from json import loads
 from os import environ
 from subprocess import run, PIPE
 import sqlite3
 from datetime import date
-import boto3
+from boto3 import client
 
 # TODO (arek): add exception handling
 # Globals:
@@ -25,16 +25,14 @@ def get_secret():
     secret_name = "jc-api-key"
     region_name = "us-east-1"
     # Create a Secrets Manager client
-    secrets_manager = boto3.client(
-        service_name="secretsmanager", region_name=region_name
-    )
+    secrets_manager = client(service_name="secretsmanager", region_name=region_name)
     get_secret_value_response = secrets_manager.get_secret_value(SecretId=secret_name)
     secret = loads(get_secret_value_response["SecretString"])
     return secret["Jumpcloud-API-key"]
 
 
 def grab_approved_list():
-    s3 = boto3.client("s3")
+    s3 = client("s3")
     bucket = "arekgcpscoutsuite"
     s3.download_file(Filename=app_file, Bucket=bucket, Key=app_file)
 
@@ -46,7 +44,7 @@ def grab_command_results(commandID: str) -> dict:
         "limit": 100,
     }
     results = loads(
-        requests.request("GET", results_url, headers=headers, params=resultsQuery).text
+        request("GET", results_url, headers=headers, params=resultsQuery).text
     )
     # "custom" pagination since JC doesn't have a good one.
     if len(results) < macDevices:
@@ -55,9 +53,7 @@ def grab_command_results(commandID: str) -> dict:
             "skip": 100,
         }
         results_two = loads(
-            requests.request(
-                "GET", results_url, headers=headers, params=resultsQuery
-            ).text
+            request("GET", results_url, headers=headers, params=resultsQuery).text
         )
         results = results + results_two
 
@@ -88,9 +84,7 @@ def collect_report_data(results: dict) -> list:
             system_url = f"https://console.jumpcloud.com/api/systems/{system_id}"
             queryString = {"fields": "serialNumber"}
             content = loads(
-                requests.request(
-                    "GET", system_url, headers=headers, params=queryString
-                ).text
+                request("GET", system_url, headers=headers, params=queryString).text
             )
             serialNum = content["serialNumber"]
             for item in pulled_apps:
@@ -131,14 +125,14 @@ def create_report(results: list):
             stdout=PIPE,
         )
         softwarereport.write(report.stdout)
-    s3 = boto3.client("s3")
+    s3 = client("s3")
     s3.upload_file(Filename=reportFile, Bucket=bucket, Key=reportFile)
 
 
 def clear_command_results(result_ids: list):
     for result in result_ids:
         url = f"https://console.jumpcloud.com/api/commandresults/{result}"
-        requests.request("DELETE", url, headers=headers).raise_for_status
+        request("DELETE", url, headers=headers).raise_for_status
 
 
 cmdId = "67606e79e8105bcf99bfde8b"
