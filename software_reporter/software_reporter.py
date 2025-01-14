@@ -12,12 +12,12 @@ from datetime import date
 from boto3 import client
 
 # TODO (arek): add exception handling
+# TODO (arek): swap out aws variables for prod ones
 # Globals:
 bad_apps = []
 resultIds = []
 region = "us-east-1"
 environ["AWS_DEFAULT_REGION"] = region
-# TODO (arek): replace with correct bucket in prod aws
 bucket = "arekgcpscoutsuite"
 app_file = "approved_software.txt"
 reportFile = f"{date.today()}_software_report.csv"
@@ -41,7 +41,6 @@ def grab_approved_list():
     s3.download_file(Filename=app_file, Bucket=bucket, Key=app_file)
 
 
-# grabs results from command stores output into variable 'results'
 def grab_command_results(commandID: str) -> dict:
     results_url = f"https://console.jumpcloud.com/api/commands/{commandID}/results"
     resultsQuery = {
@@ -64,7 +63,6 @@ def grab_command_results(commandID: str) -> dict:
     return results
 
 
-# grabs result ids from results and puts them in the 'resultIds' list
 def hijack_resultsids(results: dict) -> dict:
     for item in results:
         resultIds.append(item["response"]["id"])

@@ -9,22 +9,39 @@ from datetime import datetime
 from csv import reader
 from boto3 import client
 import re
+from json import loads
 
+# TODO (arek): swap out AWS variables with Prod ones
 
 # Globals
-bucket = "sheerid-logarchive-use1"
+# bucket = "sheerid-logarchive-use1"
+bucket = "arekgcpscoutsuite"
 region = "us-east-1"
 environ["AWS_DEFAULT_REGION"] = region
-
 system_ids = []
+app_list = []
+reportFile = "apps.csv"
+
+# TODO (arek): create function to run the command.
+
+
+def get_secret():
+    secret_name = "jc-api-key"
+    region_name = "us-east-1"
+    # Create a Secrets Manager client
+    secrets_manager = client(service_name="secretsmanager", region_name=region_name)
+    get_secret_value_response = secrets_manager.get_secret_value(SecretId=secret_name)
+    secret = loads(get_secret_value_response["SecretString"])
+    return secret["Jumpcloud-API-key"]
 
 
 # grabs latest file from S3
 def grab_file():
-    prefix = "it/software-inventory/"
+    # prefix = "it/software-inventory/"
     s3 = client("s3")
     # List all objects in the bucket with the specified prefix
-    response = s3.list_objects_v2(Bucket=bucket, Prefix=prefix)
+    # response = s3.list_objects_v2(Bucket=bucket, Prefix=prefix)
+    response = s3.list_objects_v2(Bucket=bucket)
 
     if "Contents" not in response:
         print(f"No files found in bucket {bucket} with prefix {prefix}")
@@ -59,11 +76,8 @@ def grab_file():
     s3.download_file(Bucket=bucket, Key=latest_file, Filename="./apps.csv")
 
 
-app_list = []
-
-
 def grab_apps_and_systems(file, list1, list2):
-    with open("apps.csv", "r") as app_file:
+    with open(f"{file}", "r") as app_file:
         contents = reader(app_file)
         app_list = list1
         system_ids = list2
@@ -79,13 +93,9 @@ def grab_apps_and_systems(file, list1, list2):
     system_ids = set(system_ids)
 
 
-def create_jc_command(apps):
+def create_jc_command(apps: list) -> str:
     apps = " ".join(apps)
     url = "https://console.jumpcloud.com/api/commands"
-    headers = {
-        "x-api-key": environ["JUMPCLOUD_API_KEY"],
-        "content": "application/json",
-    }
     cmd_string_one = f"""
     #!/bin/bash
     declare -a app_list
@@ -109,13 +119,33 @@ def create_jc_command(apps):
         "sudo": True,
         "user": "000000000000000000000000",
     }
-    requests.request("POST", url=url, json=payload, headers=headers).status_code
+    try:
+        response = requests.request("POST", url=url, json=payload, headers=headers)
+        response.raise_for_status()
+        response = loads(response.text)
+    except requests.exceptions.RequestException as e:
+        print(f"Error creating Jumpcloud Command: {e}")
+
+    return response["id"]
 
 
-# TODO(arek): create function that binds devices from
-# system_ids to the newly created_command. (should grab the id for the command)
+def bind_devices(id: str) -> str:
+    url = f"https://console.jumpcloud.com/api/v2/commands/{id}/associations"
+    try:
+        for item in system_ids:
+            payload = {"id": item, "op": "add", "type": "system"}
+            requests.request("POST", url, json=payload, headers=headers)
+
+    except Exception as e:
+        print(f"Error binding system to command: {e}")
+    return id
 
 
-reportFile = "apps.csv"
-# grab_apps_and_systems(reportFile, app_list, system_ids)
-# create_jc_command(app_list)
+headers = {
+    "x-api-key": get_secret(),
+    "content": "application/json",
+}
+
+grab_file()
+grab_apps_and_systems(reportFile, app_list, system_ids)
+bind_devices(create_jc_command(app_list))
