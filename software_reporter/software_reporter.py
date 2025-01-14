@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# Objective: Audits company MacOS software and Creates report in S3
+# Arek Smullen (arek.smullen@sheerid.com)
+# SheerID 2025
+
 from requests import request
 from json import loads
 from os import environ
