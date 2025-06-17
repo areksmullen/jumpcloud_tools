@@ -3,7 +3,7 @@
 # Arek Smullen (arek.smullen@sheerid.com)
 # SheerID 2025
 
-from requests import request
+from requests import request, exceptions
 from json import loads
 from os import environ
 from subprocess import run, PIPE
@@ -11,21 +11,19 @@ import sqlite3
 from datetime import date
 from boto3 import client
 
-# TODO (arek): add exception handling
-# TODO (arek): swap out aws variables for prod ones
 # Globals:
 bad_apps = []
 resultIds = []
 region = "us-east-1"
 environ["AWS_DEFAULT_REGION"] = region
-bucket = "arekgcpscoutsuite"
+bucket = "sheerid-logarchive-use1/it/software-inventory"
 app_file = "approved_software.txt"
 reportFile = f"{date.today()}_software_report.csv"
 # This will need to be periodically updated as we scale up.
 macDevices = 200
 
-
 def get_secret():
+    # make sure this secret is named this in
     secret_name = "jc-api-key"
     region_name = "us-east-1"
     # Create a Secrets Manager client
@@ -37,7 +35,7 @@ def get_secret():
 
 def grab_approved_list():
     s3 = client("s3")
-    bucket = "arekgcpscoutsuite"
+    bucket = "com-sheerid-it-statedb/software-inventory"
     s3.download_file(Filename=app_file, Bucket=bucket, Key=app_file)
 
 
@@ -46,19 +44,25 @@ def grab_command_results(commandID: str) -> dict:
     resultsQuery = {
         "limit": 100,
     }
-    results = loads(
-        request("GET", results_url, headers=headers, params=resultsQuery).text
-    )
-    # "custom" pagination since JC doesn't have a good one.
-    if len(results) < macDevices:
-        resultsQuery = {
-            "limit": 100,
-            "skip": 100,
-        }
-        results_two = loads(
-            request("GET", results_url, headers=headers, params=resultsQuery).text
-        )
-        results = results + results_two
+    try:
+        response = request("GET", results_url, headers=headers, params=resultsQuery)
+        response.raise_for_status()
+        results = loads(response.text)
+    
+    except exceptions.RequestException as e:
+        print(f"Error retrieving command results: {e}")
+    
+    else:
+        # "custom" pagination since JC doesn't have a good one.
+        if len(results) < macDevices:
+            resultsQuery = {
+                "limit": 100,
+                "skip": 100,
+            }
+            results_two = loads(
+                request("GET", results_url, headers=headers, params=resultsQuery).text
+            )
+            results = results + results_two
 
     return results
 
@@ -66,6 +70,7 @@ def grab_command_results(commandID: str) -> dict:
 def hijack_resultsids(results: dict) -> dict:
     for item in results:
         resultIds.append(item["response"]["id"])
+    
     return results
 
 
@@ -105,6 +110,9 @@ def create_database():
     result = cur.execute("SELECT name FROM sqlite_master WHERE name='inventory'")
     if result.fetchone() == None:
         cur.execute("CREATE TABLE inventory(system_id, serial, apps)")
+    else:
+        cur.execute("DROP TABLE inventory")
+        cur.execute("CREATE TABLE inventory(system_id, serial, apps)")
     con.close()
 
 
@@ -137,9 +145,14 @@ def clear_command_results(result_ids: list):
         request("DELETE", url, headers=headers).raise_for_status
 
 
-cmdId = "67606e79e8105bcf99bfde8b"
+cmdId = "67c88ba02002cbf8c749184f"
+
 headers = {"x-api-key": get_secret(), "content": "application/json"}
 grab_approved_list()
 create_database()
-create_report(collect_report_data(hijack_resultsids(grab_command_results({cmdId}))))
-clear_command_results(resultIds)
+try:
+    create_report(collect_report_data(hijack_resultsids(grab_command_results(cmdId))))
+except Exception as err:
+    print(f"Error: ${err}")
+else:
+    clear_command_results(resultIds)
