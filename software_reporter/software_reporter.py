@@ -3,20 +3,23 @@
 # Arek Smullen (arek.smullen@sheerid.com)
 # SheerID 2025
 
+# this file has been modified to run locally 
+
 from requests import request, exceptions
 from json import loads
 from os import environ
 from subprocess import run, PIPE
 import sqlite3
 from datetime import date
-from boto3 import client
+from boto3 import client, Session
 
 # Globals:
+session = Session(profile_name="testing")
 bad_apps = []
 resultIds = []
 region = "us-east-1"
 environ["AWS_DEFAULT_REGION"] = region
-bucket = "sheerid-logarchive-use1/it/software-inventory"
+bucket = "arekgcpscoutsuite"
 app_file = "approved_software.txt"
 reportFile = f"{date.today()}_software_report.csv"
 # This will need to be periodically updated as we scale up.
@@ -27,15 +30,15 @@ def get_secret():
     secret_name = "jc-api-key"
     region_name = "us-east-1"
     # Create a Secrets Manager client
-    secrets_manager = client(service_name="secretsmanager", region_name=region_name)
+    secrets_manager = session.client(service_name="secretsmanager", region_name=region_name)
     get_secret_value_response = secrets_manager.get_secret_value(SecretId=secret_name)
     secret = loads(get_secret_value_response["SecretString"])
     return secret["Jumpcloud-API-key"]
 
 
 def grab_approved_list():
-    s3 = client("s3")
-    bucket = "com-sheerid-it-statedb/software-inventory"
+    s3 = session.client("s3")
+    #bucket = "com-sheerid-it-statedb/software-inventory"
     s3.download_file(Filename=app_file, Bucket=bucket, Key=app_file)
 
 
@@ -135,7 +138,7 @@ def create_report(results: list):
             stdout=PIPE,
         )
         softwarereport.write(report.stdout)
-    s3 = client("s3")
+    s3 = session.client("s3")
     s3.upload_file(Filename=reportFile, Bucket=bucket, Key=reportFile)
 
 
